@@ -1,0 +1,472 @@
+/* Estilos Generales del Body */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Un gris muy claro para el fondo */
+}
+
+/* Sección de Cabecera/Hero */
+.hero {
+    background-color: #1a6d47; /* Este es el verde oscuro de tu logo 1.jpg */
+    color: white; /* Aseguramos que el texto sea blanco */
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para el logo (la imagen 1.jpg) */
+.logo {
+    max-width: 180px; /* Ajusta el tamaño de tu logo si es necesario */
+    height: auto;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+.hero h1 {
+    margin: 5px 0;
+    font-size: 5em;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInFadeIn 1s ease-out forwards 1s;
+}
+
+.hero .slogan {
+    font-size: 1.8em;
+    font-style: italic;
+    margin-top: 15px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInFadeIn 1s ease-out forwards 1.5s;
+}
+
+/* Barra de Navegación */
+nav {
+    background-color: #1a6d47;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #1a6d47;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Contenido Principal */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 70px;
+    padding: 20px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #1a6d47;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    width: 100px;
+    height: 5px;
+    background-color: #a8d9a8;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 2px;
+}
+
+/* SECCIÓN DEL CARRUSEL (Estilos específicos para Slick Carousel) */
+.carousel-section {
+    margin-bottom: 70px;
+    padding: 20px 0;
+    background-color: #f0f0f0; /* Un fondo sutil para el carrusel */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden; /* Importante para que el carrusel no se desborde */
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    margin: 0 auto;
+    max-width: 90%; /* Ajusta el ancho máximo del carrusel */
+}
+
+/* Estilos de los slides (las imágenes) */
+.carousel-container .slick-slide {
+    padding: 10px; /* Espacio alrededor de cada imagen */
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+}
+
+.carousel-container img {
+    width: 100%;
+    height: 300px; /* Altura fija para las imágenes del carrusel */
+    object-fit: cover; /* Recorta la imagen para que cubra el espacio */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra para las imágenes */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Transición para el hover */
+}
+
+/* Efecto HOVER en las imágenes del carrusel */
+.carousel-container img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+    filter: brightness(0.8); /* Oscurece un poco la imagen */
+    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+}
+
+/* Estilos para las flechas de navegación de Slick */
+.slick-prev, .slick-next {
+    font-size: 0; /* Oculta el texto de las flechas predeterminadas */
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 40px; /* Tamaño de la flecha */
+    height: 40px; /* Tamaño de la flecha */
+    padding: 0;
+    cursor: pointer;
+    color: transparent; /* Oculta el color del texto si lo hubiera */
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 10; /* Asegura que las flechas estén por encima de las imágenes */
+}
+
+.slick-prev:before, .slick-next:before {
+    font-family: "Font Awesome 5 Free"; /* Usa Font Awesome para los iconos */
+    font-weight: 900; /* Necesario para los iconos sólidos */
+    font-size: 30px; /* Tamaño del icono de la flecha */
+    color: #1a6d47; /* Color verde oscuro para las flechas */
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.slick-prev:hover:before, .slick-next:hover:before {
+    opacity: 1; /* Flechas más opacas al pasar el ratón */
+}
+
+.slick-prev {
+    left: -20px; /* Ajusta la posición izquierda de la flecha */
+}
+.slick-prev:before {
+    content: "\f053"; /* Código de Font Awesome para la flecha izquierda */
+}
+
+.slick-next {
+    right: -20px; /* Ajusta la posición derecha de la flecha */
+}
+.slick-next:before {
+    content: "\f054"; /* Código de Font Awesome para la flecha derecha */
+}
+
+/* Estilos para los puntos de navegación de Slick */
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    position: relative;
+    bottom: -20px; /* Ajusta la posición de los puntos debajo del carrusel */
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    font-size: 0; /* Oculta el texto de los botones */
+    width: 12px; /* Tamaño del punto */
+    height: 12px; /* Tamaño del punto */
+    background-color: #a8d9a8; /* Color verde claro para los puntos inactivos */
+    border: none;
+    border-radius: 50%; /* Forma redonda */
+    cursor: pointer;
+    opacity: 0.7;
+    transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #1a6d47; /* Color verde oscuro para el punto activo */
+    opacity: 1;
+}
+
+/* Sección de Servicios */
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+}
+
+.service-item {
+    background-color: #fefefe;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    border: 1px solid #eee;
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.service-item .icon-service {
+    font-size: 4.5em;
+    color: #a8d9a8;
+    margin-bottom: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.service-item:hover .icon-service {
+    color: #1a6d47;
+}
+
+.service-item h3 {
+    color: #1a6d47;
+    font-size: 2em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Sección de Contacto */
+.contact-section {
+    text-align: center;
+}
+
+.contact-info {
+    font-size: 1.3em;
+    margin-top: 30px;
+}
+
+.contact-info p {
+    margin: 15px 0;
+}
+
+.contact-info a {
+    color: #1a6d47;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+    color: #0d4a2d;
+    text-decoration: underline;
+}
+
+.icon-contact {
+    font-size: 1.5em;
+    color: #a8d9a8;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 0.95em;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+/* ----------------------------- */
+/* DEFINICIÓN DE LAS ANIMACIONES */
+/* ----------------------------- */
+
+/* Animación para el logo (fade in) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación para el título y el eslogan (deslizarse y aparecer) */
+@keyframes slideInFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Diseño Responsivo (para pantallas más pequeñas) */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3em;
+    }
+    .hero .slogan {
+        font-size: 1.5em;
+    }
+    section h2 {
+        font-size: 2.5em;
+    }
+    .service-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    /* Ajustes para el carrusel en pantallas medianas */
+    .carousel-container img {
+        height: 250px; /* Reducir altura de imagen */
+    }
+    .slick-prev {
+        left: 5px; /* Acercar flechas */
+    }
+    .slick-next {
+        right: 5px; /* Acercar flechas */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+        min-height: 350px;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero .slogan {
+        font-size: 1.2em;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    main {
+        padding: 30px 15px;
+    }
+    section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .service-item {
+        padding: 25px;
+    }
+    .service-item h3 {
+        font-size: 1.7em;
+    }
+    .service-item p {
+        font-size: 1em;
+    }
+    .contact-info {
+        font-size: 1.1em;
+    }
+    /* Ajustes para el carrusel en pantallas pequeñas */
+    .carousel-container img {
+        height: 200px; /* Reducir altura de imagen */
+    }
+    .slick-prev, .slick-next {
+        width: 30px; /* Reducir tamaño de flechas */
+        height: 30px;
+    }
+    .slick-prev:before, .slick-next:before {
+        font-size: 24px; /* Reducir tamaño de icono de flecha */
+    }
+    .slick-dots {
+        bottom: -10px; /* Ajustar posición de los puntos */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero .slogan {
+        font-size: 1em;
+    }
+    .logo {
+        max-width: 120px;
+        padding: 10px;
+    }
+    section h2 {
+        font-size: 1.8em;
+    }
+    .service-item .icon-service {
+        font-size: 3.5em;
+    }
+    .service-item h3 {
+        font-size: 1.5em;
+    }
+}
